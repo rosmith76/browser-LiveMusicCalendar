@@ -1,20 +1,65 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Boston Live Music Calendar</title>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      <header>
+        <h1>Boston's Live Music Calendar</h1>
+        <h4>Music for the fans!</h4>
+      </header>
+      <div id=intro>
+
+        <p> Welcome to the Boston Live Music Calendar, you place for all thing live music. There are great shows every night of the week,
+          but the problem is knowing when and where the shows are. This calendar aims to bring all that into to one location. The Boston
+          Live Music Calendar is for exactly that. Live music of any kind, anywhere around Boston and  surrounding areas. Once you create
+          an account, you can tag all the shows you are interested in.</p>
+      </div>
+
+      <nav class="navbar">
+        <button type="button" id="sign-up-button" class="btn btn-default">Sign Up</button>
+        <button type="button" id="sign-in-button" class="btn btn-default">Sign In</button>
+        <button type="button" id="change-password-button" class="btn btn-default">Change Password</button>
+        <button type="button" id="sign-out-button" class="btn btn-default">Sign Out</button>
+        <button type="button" id="my-shows-button" class="btn btn-default">My Shows</button>
+      </nav>
+
+      <form id="sign-up">
+        <fieldset>
+          <legend>Sign Up</legend>
+          <input type= "text" name= "fname" placeholder="first name">
+          <input type= "text" name= "lname" placeholder="last name">
+          <input type= "date" name= "date" placeholder="date of birth">
+          <input type= "email" name= "credentials[email]" placeholder="enter your email">
+          <input type= "password" name= "credentials[password]" placeholder="enter your password">
+          <input type= "password" name= "credentials[password_confirmation]" placeholder="confirm your password">
+          <input type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+
+      <form id="sign-in">
+        <fieldset>
+          <legend>Sign In</legend>
+          <input type= "email" name= "credentials[email]" placeholder="enter your email">
+          <input type= "password" name= "credentials[password]" placeholder="enter your password">
+          <input type="submit" name="submit" value="Sign in!">
+        </fieldset>
+      </form>
+
+      <form id="change-password">
+        <fieldset>
+          <legend>Change Password</legend>
+          <input type= "password" name= "passwords[old]" placeholder="enter your old password">
+          <input type= "password" name= "passwords[new]" placeholder="enter your new password">
+          <input type="submit" name="submit" value="Change Password">
+        </fieldset>
+      </form>
+
+
+
     </body>
 </html>

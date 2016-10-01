@@ -1,0 +1,54 @@
+$black: #000;
+$white: #fff;
+
+header {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  background-color: $black;
+  color: $white;
+}
+
+
+
+// $unit: 30px;
+// $width: (4 * $unit);
+// $height: (4 * $unit);
+// $black: #000;
+// $white: #fff;
+
+// header {
+//   box-sizing: border-box;
+//   text-align: center;
+// }
+
+// form {
+//   background-color: $black;
+//   color: $white;
+// }
+
+// body {
+//   background-color: $black;
+//   color: $white;
+// }
+
+// .row {
+//   text-align: center;
+// }
+
+// .board {
+//   box-sizing: border-box;
+//   margin: auto;
+// }
+
+// .container .col-xs-4 {
+//   border: 1px solid $gold;
+//   box-sizing: border-box;
+//   display: block;
+//   height: $height;
+//   margin: auto;
+//   text-align: center;
+//   width: $width;
+//  }
