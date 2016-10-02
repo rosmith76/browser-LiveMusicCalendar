@@ -9,18 +9,18 @@ require('./example');
 
 
 // require('./calendar/api');
-// require('./auth/api');
-// require('./auth/app');
-// require('./auth/ui');
+require('./auth/api');
+require('./auth/events');
+require('./auth/ui');
 // require('./calendar/logic');
 //
 // const ui = require('./calendar/ui');
-//
-// const authEvents = require('./auth/events.js');
-//
-// $(() => {
-//   $('container').show();
-//   $('form').hide();
-//   authEvents.addHandlers();
-//   ui.addHandlers();
-// });
+
+const authEvents = require('./auth/events.js');
+
+$(() => {
+  // $('container').show();
+  $('form').hide();
+  authEvents.addHandlers();
+  // ui.addHandlers();
+});
