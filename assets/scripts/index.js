@@ -1,4 +1,7 @@
 'use strict';
+
+
+//
 //
 // // user require with a reference to bundle the file and use it in this file
 // // var example = require('./example');
@@ -12,8 +15,9 @@ require('./example');
 require('./auth/api');
 require('./auth/events');
 require('./auth/ui');
-// require('./calendar/logic');
-//
+// require('./calendar/events');
+// window.eventCalendar = calendar;
+// //
 // const ui = require('./calendar/ui');
 
 const authEvents = require('./auth/events.js');
