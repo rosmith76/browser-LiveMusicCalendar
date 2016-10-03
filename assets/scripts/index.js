@@ -24,7 +24,7 @@ const authEvents = require('./auth/events.js');
 
 $(() => {
   // $('container').show();
-  $('form').hide();
+  // $('form').hide();
   authEvents.addHandlers();
   // ui.addHandlers();
 });

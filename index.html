@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Boston Live Music Calendar</title>
+      <title>Live Music Tracker</title>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
@@ -9,75 +9,143 @@
     <body class="container-fluid">
 
       <header>
-        <h1>Boston's Live Music Calendar</h1>
-        <h4>Music for the fans!</h4>
+        <h1>Live Music Tracker! </h1>
+        <h4>Keep track of every show!</h4>
+        <!-- <h6>even if you can't remember the show</h6> -->
       </header>
       <div id=intro>
 
-        <p> Welcome to the Boston Live Music Calendar, your place for all thing live music. There are great shows every night of the week,
-          but the problem is knowing when and where the shows are. This calendar aims to bring all that into to one location. The Boston
-          Live Music Calendar is for exactly that. Live music of any kind, anywhere around Boston and  surrounding areas. Once you create
-          an account, you can tag all the shows you are interested in.</p>
+        <p> Welcome the Live Music Tracker! A simple way to keep track of every live show you have ever attended.
+            Once you create an account you enter the band, date, venue, additional notes and setlist!
+          </p>
       </div>
-
-      <nav class="navbar">
-        <button type="button" id="sign-up-button" class="btn btn-default">Sign Up</button>
-        <button type="button" id="sign-in-button" class="btn btn-default">Sign In</button>
-        <button type="button" id="change-password-button" class="btn btn-default">Change Password</button>
-        <button type="button" id="sign-out-button" class="btn btn-default">Sign Out</button>
-        <button type="button" id="my-shows-button" class="btn btn-default">My Shows</button>
-      </nav>
-
-      <form id="sign-up">
-        <fieldset>
-          <legend>Sign Up</legend>
-          <input type= "text" name= "fname" placeholder="first name">
-          <input type= "text" name= "lname" placeholder="last name">
-          <!-- <input type= "date" name= "date" placeholder="enter date of birth"> -->
-          <input type= "email" name= "credentials[email]" placeholder="enter your email">
-          <input type= "password" name= "credentials[password]" placeholder="enter your password">
-          <input type= "password" name= "credentials[password_confirmation]" placeholder="confirm your password">
-          <input type="submit" name="submit" value="Sign up!">
-        </fieldset>
-      </form>
-
-      <form id="sign-in">
-        <fieldset>
-          <legend>Sign In</legend>
-          <input type= "email" name= "credentials[email]" placeholder="enter your email">
-          <input type= "password" name= "credentials[password]" placeholder="enter your password">
-          <input type="submit" name="submit" value="Sign in!">
-        </fieldset>
-      </form>
-
-      <form id="change-password">
-        <fieldset>
-          <legend>Change Password</legend>
-          <input type= "password" name= "passwords[old]" placeholder="enter your old password">
-          <input type= "password" name= "passwords[new]" placeholder="enter your new password">
-          <input type="submit" name="submit" value="Change Password">
-        </fieldset>
-      </form>
 
       <div class=message_canter id="message">
         </div>
 
+      <nav class="navbar">
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign-up-button">Sign Up</button>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign-in-button">Sign In</button>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-events-button">Add New Show</button>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#delete-events-button">Remove Show</button>
+        <button type="button" id="my-events-button" class="btn btn-primary btn-lg">My Shows</button>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#change-password-button">Change Password</button>
+        <button type="button" id="sign-out-button" class="btn btn-primary btn-lg">Sign Out</button>
+      </nav>
 
+      <div class="modal fade" id="sign-up-button" tabindex="-1"role="dialog" aria-labelledby="signUpModalLabel">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <form id="sign-up">
+             <fieldset>
+               <legend>Sign Up</legend>
+               <input type= "text" name= "fname" placeholder="first name">
+               <input type= "text" name= "lname" placeholder="last name">
+               <input type= "email" name= "credentials[email]" placeholder="enter your email">
+               <input type= "password" name= "credentials[password]" placeholder="enter your password">
+               <input type= "password" name= "credentials[password_confirmation]" placeholder="confirm your password">
+               <input type="submit" name="submit" value="Sign up!">
+             </fieldset>
+           </form>
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal"
+               aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           </div>
+         </div>
+       </div>
+     </div>
 
-
-
-      </div> -->
-      <div id=venues>
-        Links to popular venues!
-        <a href="http://www.orpheum-theater.com/orpheum_theater_boston.php">Orpheum Theater</a>
-        <a href="http://www.paradiserock.club/">Paradise Rock Club</a>
-        <a href="http://www.sinclaircambridge.com/">The Sinclair Kitchen</a>
-        <a href="http://thunderroadclub.com/">Thunder Road</a>
-        <a href="http://www.houseofblues.com/boston">House of Blues</a>
-        <a href="http://crossroadspresents.com/brighton-music-hall">Brighton Music Hall</a>
-        <a href="http://greatscottboston.com/">Great Scott</a>
-
+     <div class="modal fade" id="sign-in-button" tabindex="-1"role="dialog" aria-labelledby="signInModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form id="sign-in">
+            <fieldset>
+              <legend>Sign In</legend>
+              <input type= "email" name= "credentials[email]" placeholder="enter your email">
+              <input type= "password" name= "credentials[password]" placeholder="enter your password">
+              <input type="submit" name="submit" value="Sign in!">
+            </fieldset>
+          </form>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"
+              aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+        </div>
       </div>
+    </div>
 
+    <div class="modal fade" id="add-events-button" tabindex="-1"role="dialog" aria-labelledby="addEventsModalLabel">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <form id="add-event">
+           <fieldset>
+             <legend>Add Show</legend>
+             <input type= "text" name= "band" placeholder="Band Name">
+             <input type= "text" name= "venue" placeholder="Venue Name">
+             <input type= "date" name= "date" placeholder="Show Date yyyy-mm-dd">
+             <input type= "text" name= "setlist" placeholder="Setlist">
+             <input type="submit" name="submit" value="Save!">
+           </fieldset>
+         </form>
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal"
+             aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="modal fade" id="delete-events-button" tabindex="-1"role="dialog" aria-labelledby="removeEventsModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form id="remove-event">
+          <fieldset>
+            <legend>Delete Show</legend>
+            <input type= "text" name= "event_id" placeholder="Event ID#">
+            <input type="submit" name="submit" value="Save!">
+          </fieldset>
+        </form>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"
+            aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="modal fade" id="change-password-button" tabindex="-1"role="dialog" aria-labelledby="changePasswordModalLabel">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <form id="change-password">
+           <fieldset>
+             <legend>Change Password</legend>
+             <input type= "password" name= "passwords[old]" placeholder="enter your old password">
+             <input type= "password" name= "passwords[new]" placeholder="enter your new password">
+             <input type="submit" name="submit" value="Change Password">
+           </fieldset>
+         </form>
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal"
+             aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+      <footer>
+        <div id=band_setlists>
+          Links to setlists!
+          <a href="https://www.phantasytour.com/bands/gd/setlists">Greatful Dead</a>
+          <a href="https://www.phantasytour.com/bands/phish/setlists">Phish</a>
+          <a href="https://www.phantasytour.com/bands/moe/setlists">moe.</a>
+          <a href="https://www.phantasytour.com/bands/um/setlists">Umphreys McGee</a>
+          <a href="https://www.phantasytour.com/bands/ymsb/setlists">Yonder Mountain String Band</a>
+          <a href="https://www.phantasytour.com/bands/wsp/setlists">Widespread Panic</a>
+          <a href="hhttps://www.phantasytour.com/bands/bisco/setlists">Disco Biscuits</a>
+
+        </div>
+      </footer>
     </body>
 </html>
