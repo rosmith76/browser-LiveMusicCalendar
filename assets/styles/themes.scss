@@ -1,17 +1,26 @@
 $black: #000;
+$grey: #4b4a4c;
 $white: #fff;
 $red: #f00;
 
 header {
-  box-sizing: border-box;
+  align-self: center;
+  // box-sizing: border-box;
   text-align: center;
+  width: 100%;
 }
 
+
 body {
-  // background-color: $black;
-  background-image: url('../../images/moe.jpg');
+  // background-color: $grey;
+  background-image: url('../../images/phish1.jpg');
   background-size: cover;
   color: $white;
+}
+
+footer {
+  background-size: cover;
+  width: auto;
 }
 
 

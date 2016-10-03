@@ -1,10 +1,25 @@
 $font-size: 18px;
 $line-height: 1.6;
 $max-width: 650px;
+$max-width-header: 1200px;
 $vertical-margin: 40px;
 $horizontal-padding: 10px;
 $heading-line-height: 1.2;
 $text-color: #fff;
+$text-color-form: #000;
+
+header {
+  color: $text-color;
+  font-size: $font-size;
+  line-height: $line-height;
+  margin: $vertical-margin auto;
+  max-width: $max-width-header;
+  padding: 0 $horizontal-padding;
+}
+
+form {
+  color: $text-color-form;
+}
 
 body {
   color: $text-color;
