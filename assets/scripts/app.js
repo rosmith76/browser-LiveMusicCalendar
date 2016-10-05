@@ -1,7 +1,8 @@
 'use strict';
 
 const app = {
-  host: 'https://fast-woodland-95047.herokuapp.com/'
+  host: 'http://localhost:3000'
+  // host: 'https://shrouded-taiga-89115.herokuapp.com'
 };
 
 

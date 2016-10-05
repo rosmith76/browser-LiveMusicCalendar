@@ -38,9 +38,46 @@ const signOut = () => {
   });
 };
 
+
+
+const deleteEvent = (data) => {
+  return $.ajax({
+    url: app.host + '/events/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
+
+const addEvents = (data) => {
+  return $.ajax({
+    url: app.host + '/events/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+  });
+};
+
+const showEvents = () => {
+  return $.ajax({
+    url: app.host + '/events',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    }
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
+  deleteEvent,
+  addEvents,
+  showEvents
 };

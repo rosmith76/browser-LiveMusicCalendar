@@ -39,8 +39,8 @@
            <form id="sign-up">
              <fieldset>
                <legend>Sign Up</legend>
-               <input type= "text" name= "fname" placeholder="first name">
-               <input type= "text" name= "lname" placeholder="last name">
+               <input type= "text" name="credentials[given_name]" placeholder="first name">
+               <input type= "text" name="credentials[surname]" placeholder="last name">
                <input type= "email" name= "credentials[email]" placeholder="enter your email">
                <input type= "password" name= "credentials[password]" placeholder="enter your password">
                <input type= "password" name= "credentials[password_confirmation]" placeholder="confirm your password">
@@ -80,10 +80,10 @@
          <form id="add-event">
            <fieldset>
              <legend>Add Show</legend>
-             <input type= "text" name= "band" placeholder="Band Name">
-             <input type= "text" name= "venue" placeholder="Venue Name">
-             <input type= "date" name= "date" placeholder="Show Date yyyy-mm-dd">
-             <input type= "text" name= "setlist" placeholder="Setlist">
+             <input type= "text" name= "[event]band" placeholder="Band Name">
+             <input type= "text" name= "[event]venue" placeholder="Venue Name">
+             <input type= "date" name= "[event]date" placeholder="Show Date yyyy-mm-dd">
+             <input type= "text" name= "[event]setlist" placeholder="Setlist">
              <input type="submit" name="submit" value="Save!">
            </fieldset>
          </form>
@@ -95,14 +95,14 @@
      </div>
    </div>
 
-   <div class="modal fade" id="delete-events-button" tabindex="-1"role="dialog" aria-labelledby="removeEventsModalLabel">
+   <div class="modal fade" id="delete-events-button" tabindex="-1"role="dialog" aria-labelledby="deleteEventsModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form id="remove-event">
+        <form id="delete-event">
           <fieldset>
             <legend>Delete Show</legend>
             <input type= "text" name= "event_id" placeholder="Event ID#">
-            <input type="submit" name="submit" value="Save!">
+            <input type="submit" name="submit" value="Delete">
           </fieldset>
         </form>
         <div class="modal-header">
@@ -132,6 +132,8 @@
        </div>
      </div>
    </div>
+
+<div class="event-display"></div>
 
 
 
