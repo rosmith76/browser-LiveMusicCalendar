@@ -8,16 +8,13 @@
 //
 // // use require without a reference to ensure a file is bundled
 require('./example');
-
-
-
-// require('./calendar/api');
 require('./auth/api');
 require('./auth/events');
 require('./auth/ui');
+// require('./calendar/api');
+// require('./calendar/ui');
 // require('./calendar/events');
-// window.eventCalendar = calendar;
-// //
+
 // const ui = require('./calendar/ui');
 
 const authEvents = require('./auth/events.js');
