@@ -40,9 +40,9 @@ const signOut = () => {
 
 
 
-const deleteEvent = (data) => {
+const deleteEvent = (id) => {
   return $.ajax({
-    url: app.host + '/events/' + data,
+    url: app.host + '/events/' + {id},
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -72,6 +72,18 @@ const showEvents = () => {
   });
 };
 
+
+const updateEvent = (data, id) => {
+  return $.ajax({
+    url: app.host + '/events/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
@@ -79,5 +91,6 @@ module.exports = {
   signOut,
   deleteEvent,
   addEvents,
+  updateEvent,
   showEvents
 };
