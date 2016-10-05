@@ -1,6 +1,9 @@
 'use strict';
 const app = require ('../app');
 
+const clearInputField = () => {
+  $('.input').val('');
+};
 const signInSuccess = (data) => {
   app.user = data.user;
 };
@@ -29,6 +32,11 @@ const addEventsSuccess = (data) => {
   app.user = data.user;
 };
 
+const updateEventSuccess = () => {
+  clearInputField();
+  $('#updateEventtModal').modal('hide');
+};
+
 const showEventsTemplate = require('../templates/show-all-events.handlebars');
 
 const showEventSuccess = (events) => {
@@ -44,7 +52,8 @@ module.exports = {
   deleteEventSuccess,
   signOutSuccess,
   addEventsSuccess,
-  showEventSuccess
+  showEventSuccess,
+  updateEventSuccess
 };
 
 

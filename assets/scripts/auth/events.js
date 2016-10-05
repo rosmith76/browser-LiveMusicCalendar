@@ -40,13 +40,34 @@ const onSignOut =(event) => {
     .fail(ui.failure);
 };
 
-const onDeleteEvent =(event) => {
+const updateId = (event) => {
   event.preventDefault();
-  api.deleteEvent(event.target)
-    .done(ui.deleteEventSuccess)
+  let id = $(event.target).attr("event-id");
+  $(".update-event-button").attr("event-id", id);
+};
+
+const onUpdateEvent = (event) => {
+  event.preventDefault();
+  let id = $(".update-event-button").attr("event-id");
+  let data = getFormFields(event.target);
+  api.updateEvent(data, id)
+    .done(ui.updateProjectSuccess)
     .fail(ui.failure);
 };
 
+const getID =  function (event){
+  event.preventDefault();
+  let id = $(event.target).attr("event-id");
+  $(".delete-event-button").attr("event-id", id);
+};
+
+const onDeleteEvent =(event) => {
+  event.preventDefault();
+  let id =$(event.target).attr("event-id");
+  api.deleteEvent(id)
+    .done(ui.deleteEventSuccess)
+    .fail(ui.failure);
+};
 
 const onAddEvents = (event) => {
   event.preventDefault();
@@ -66,11 +87,15 @@ const onShowEvents = (data) => {
 const addHandlers = () => {
   $('#add-event').on('submit', onAddEvents);
   $('#delete-event').on('submit', onDeleteEvent);
+  $('#delete-event').on('submit', getID);
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out-button').on('click', onSignOut);
   $('#my-events-button').on('click', onShowEvents);
+
+  $('.event-display').on('click','.updat-event',updateId);
+  $('#update-event').on('submit', onUpdateEvent);
   $('#sign-in-button').on('click', function(){
     $('#sign-in').show();
   });
