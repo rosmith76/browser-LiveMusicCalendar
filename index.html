@@ -29,7 +29,7 @@
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-events-button">Add New Show</button>
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#delete-events-button">Remove Show</button>
         <button type="button" id="my-events-button" class="btn btn-primary btn-lg">My Shows</button>
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#update-events-button">Update Show</button>
+        <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#update-events-button">Update Show</button> -->
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#change-password-button">Change Password</button>
         <button type="button" id="sign-out-button" class="btn btn-primary btn-lg">Sign Out</button>
       </nav>
@@ -96,7 +96,7 @@
      </div>
    </div>
 
-   <div class="modal fade" id="update-events-button" tabindex="-1"role="dialog" aria-labelledby="updateEventsModalLabel">
+   <!-- <div class="modal fade" id="update-events-button" tabindex="-1"role="dialog" aria-labelledby="updateEventsModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <form id="update-event">
@@ -116,7 +116,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
    <div class="modal fade" id="delete-events-button" tabindex="-1"role="dialog" aria-labelledby="deleteEventsModalLabel">
     <div class="modal-dialog" role="document">
@@ -124,7 +124,7 @@
         <form id="delete-event">
           <fieldset>
             <legend>Delete Show</legend>
-            <input type= "text" name= "[event]id" placeholder="Event ID#">
+            <input type= "text" name= "event[id]" placeholder="Event ID#" value="">
             <input type="submit" name="submit" value="Delete">
           </fieldset>
         </form>
