@@ -16,6 +16,7 @@ const failure = (error) => {
   console.error(error);
 };
 const changePassword = () => {
+  // clearInputField();
   console.log ('Password Changed');
 };
 
@@ -29,19 +30,19 @@ const deleteEventSuccess = (data) => {
 };
 
 const addEventsSuccess = (data) => {
+    clearInputField();
   app.user = data.user;
 };
 
-const updateEventSuccess = () => {
-  clearInputField();
-  $('#updateEventtModal').modal('hide');
-};
+// const updateEventSuccess = () => {
+//   clearInputField();
+//   $('#updateEventtModal').modal('hide');
+// };
 
 const showEventsTemplate = require('../templates/show-all-events.handlebars');
 
-const showEventSuccess = (events) => {
-  $('.event-display').html(showEventsTemplate(events));
-  console.log(events);
+const showEventSuccess = (data) => {
+  $('.event-display').html(showEventsTemplate(data));
 };
 
 module.exports = {
@@ -52,24 +53,5 @@ module.exports = {
   deleteEventSuccess,
   signOutSuccess,
   addEventsSuccess,
-  showEventSuccess,
-  updateEventSuccess
+  showEventSuccess
 };
-
-
-// const getGameSuccess = (data) => {
-//
-//   let wonX = 0;
-//   let wonO = 0;
-//   data.games.forEach(function(game) {
-//     const status = logic.gameStatus(game.cells);
-//     if (status.winner === 'X') {
-//       wonX++;
-//     }
-//     else if (status.winner === 'O') {
-//       wonO++;
-//     }
-//   });
-//
-//   $('#game-message').text('Your game stats are: ' + wonX + ' games won by X and ' + wonO + ' games won by O ');
-// };
