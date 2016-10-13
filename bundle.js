@@ -359,7 +359,7 @@ webpackJsonp([0],[
 	var app = __webpack_require__(5);
 
 	var clearInputField = function clearInputField() {
-	  $('.input').val('');
+	  $('input').val('');
 	};
 	var signInSuccess = function signInSuccess(data) {
 	  app.user = data.user;
@@ -372,7 +372,9 @@ webpackJsonp([0],[
 	var failure = function failure(error) {
 	  console.error(error);
 	};
-	var changePassword = function changePassword() {};
+	var changePassword = function changePassword() {
+	  clearInputField();
+	};
 
 	var signOutSuccess = function signOutSuccess() {
 	  app.user = null;
@@ -380,14 +382,16 @@ webpackJsonp([0],[
 
 	var deleteEventSuccess = function deleteEventSuccess(data) {
 	  console.log(data);
-	};
-
-	var addEventsSuccess = function addEventsSuccess(data) {
 	  clearInputField();
-	  app.user = data.user;
 	};
 
-	var updateEventSuccess = function updateEventSuccess() {};
+	var addEventsSuccess = function addEventsSuccess() {
+	  clearInputField();
+	};
+
+	var updateEventSuccess = function updateEventSuccess() {
+	  clearInputField();
+	};
 
 	var showEventsTemplate = __webpack_require__(9);
 
