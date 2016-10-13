@@ -40,25 +40,10 @@ const onSignOut =(event) => {
     .fail(ui.failure);
 };
 
-// const updateId = (event) => {
-//   event.preventDefault();
-//   let id = $(event.target).attr("event-id");
-//   $(".update-event-button").attr("event-id", id);
-// };
-
-// const onUpdateEvent = (event) => {
-//   event.preventDefault();
-//   let id = $(".update-event-button").attr("event-id");
-//   let data = getFormFields(event.target);
-//   api.updateEvent(data, id)
-//     .done(ui.updateProjectSuccess)
-//     .fail(ui.failure);
-// };
 
 const onDeleteEvent =(event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
   let id = data.event.id;
   api.deleteEvent(id)
     .done(ui.deleteEventSuccess)
@@ -76,7 +61,16 @@ const onAddEvents = (event) => {
 const onShowEvents = (event) => {
   event.preventDefault();
   api.showEvents()
-    .done(ui.showEventSuccess)
+    .done(ui.showEventsSuccess)
+    .fail(ui.failure);
+};
+
+const onUpdateEvent =(event) => {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  console.log(data);
+  api.updateEvent(data)
+    .done(ui.updateEventSuccess)
     .fail(ui.failure);
 };
 
@@ -88,21 +82,19 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out-button').on('click', onSignOut);
   $('#my-events-button').on('click', onShowEvents);
-
-  // $('.event-display').on('click','.updat-event',updateId);
-  // $('#update-event').on('submit', onUpdateEvent);
+  $('#update-event').on('submit', onUpdateEvent);
   $('#sign-in-button').on('click', function(){
     $('#sign-in').show();
   });
-  $('#sign-in').on('submit', function(){
-    $('#sign-in').hide();
+  $('#update-event-button').on('click', function(){
+    $('#update-event').show();
   });
   $('#sign-up-button').on('click', function(){
     $('#sign-up').show();
   });
-  $('#sign-up').on('submit', function(){
-    $('#sign-up').hide();
-  });
+  // $('#sign-up').on('submit', function(){
+  //   $('#sign-up').hide();
+  // });
   $('#change-password-button').on('click', function(){
     if (!app.user) {
       $('#message').text('You have to be logged in to change password');
@@ -124,9 +116,9 @@ const addHandlers = () => {
     }
     $('#add-events').show();
   });
-  $('#change-password').on('submit', function(){
-    $('#change-password').hide();
-  });
+  // $('#change-password').on('submit', function(){
+  //   $('#change-password').hide();
+  // });
 };
 
 module.exports = {

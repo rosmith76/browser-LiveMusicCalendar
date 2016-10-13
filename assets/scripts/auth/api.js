@@ -58,7 +58,7 @@ const addEvents = (data) => {
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    data: data,
+    data,
   });
 };
 
@@ -72,17 +72,16 @@ const showEvents = () => {
   });
 };
 
-//
-// const updateEvent = (data, id) => {
-//   return $.ajax({
-//     url: app.host + '/events/' + id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token,
-//     },
-//     data: data,
-//   });
-// };
+const updateEvent = (data) => {
+  return $.ajax({
+    url: app.host + '/events/' + data.event.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data,
+  });
+};
 
 module.exports = {
   signUp,
@@ -91,5 +90,6 @@ module.exports = {
   signOut,
   deleteEvent,
   addEvents,
-  showEvents
+  showEvents,
+  updateEvent
 };
