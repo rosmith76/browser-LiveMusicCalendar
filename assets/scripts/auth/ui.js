@@ -2,7 +2,7 @@
 const app = require ('../app');
 
 const clearInputField = () => {
-  $('.input').val('');
+  $('input').val('');
 };
 const signInSuccess = (data) => {
   app.user = data.user;
@@ -16,6 +16,7 @@ const failure = (error) => {
   console.error(error);
 };
 const changePassword = () => {
+  clearInputField();
 };
 
 const signOutSuccess = () => {
@@ -24,14 +25,15 @@ const signOutSuccess = () => {
 
 const deleteEventSuccess = (data) => {
   console.log (data);
+  clearInputField();
 };
 
-const addEventsSuccess = (data) => {
+const addEventsSuccess = () => {
     clearInputField();
-  app.user = data.user;
 };
 
 const updateEventSuccess = () => {
+  clearInputField();
 };
 
 const showEventsTemplate = require('../templates/show-all-events.handlebars');
