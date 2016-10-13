@@ -16,13 +16,10 @@ const failure = (error) => {
   console.error(error);
 };
 const changePassword = () => {
-  // clearInputField();
-  console.log ('Password Changed');
 };
 
 const signOutSuccess = () => {
   app.user = null;
-  console.log ('Signed out');
 };
 
 const deleteEventSuccess = (data) => {
@@ -34,16 +31,20 @@ const addEventsSuccess = (data) => {
   app.user = data.user;
 };
 
-// const updateEventSuccess = () => {
-//   clearInputField();
-//   $('#updateEventtModal').modal('hide');
-// };
+const updateEventSuccess = () => {
+};
 
 const showEventsTemplate = require('../templates/show-all-events.handlebars');
 
-const showEventSuccess = (data) => {
+const showEventsSuccess = (data) => {
   $('.event-display').html(showEventsTemplate(data));
 };
+
+// const showSingleEventTemplate = require('../templates/show-event.handlebars');
+//
+// const showSingleEventSuccess = (data) => {
+//   $('.event-display').html(showSingleEventTemplate(data));
+// };
 
 module.exports = {
   failure,
@@ -53,5 +54,6 @@ module.exports = {
   deleteEventSuccess,
   signOutSuccess,
   addEventsSuccess,
-  showEventSuccess
+  showEventsSuccess,
+  updateEventSuccess
 };
